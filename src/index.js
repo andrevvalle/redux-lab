@@ -1,5 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import { createStore } from 'redux';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import App from './components/App';
+import ReducerIncrement from './reducers/reducerIncrement'
+
+const store = createStore(ReducerIncrement);
+const render = () => {
+	ReactDOM.render(
+		<App store={ store } />,
+		document.getElementById('root')
+	);
+};
+
+store.subscribe(render);
+render();
