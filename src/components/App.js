@@ -15,18 +15,27 @@ export default class App extends Component {
 
 	increment() {
 		this.state.store.dispatch({ type: INCREMENT_COUNTER });
+
+    this.setState({
+      counter: this.props.store.getState()
+    });
 	}
 
 	decrement() {
 		this.state.store.dispatch({ type: DECREMENT_COUNTER });
+
+    this.setState({
+      counter: this.props.store.getState()
+    });
 	}
 
   render() {
+    console.log(this.state);
     return (
     	<div>
     		<h1>Simple Counter:</h1>
     		<div>
-    			<h2>{this.props.store.getState()}</h2>
+    			<h2>{this.state.counter}</h2>
     			<button onClick={ this.increment.bind(this) }>++</button>
     			<button onClick={ this.decrement.bind(this) }>--</button>
     		</div>
