@@ -30,7 +30,6 @@ export default class App extends Component {
 	}
 
   render() {
-    console.log(this.state);
     return (
     	<div>
     		<h1>Simple Counter:</h1>
