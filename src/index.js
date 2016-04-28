@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 
 import App from './components/App';
-import ReducerIncrement from './reducers/reducerIncrement'
+import ReducerIncrement from './reducers/reducerIncrement';
 
 const store = createStore(ReducerIncrement);
 const render = () => {
